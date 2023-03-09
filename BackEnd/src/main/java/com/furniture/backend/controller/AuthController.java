@@ -5,7 +5,7 @@ import com.furniture.backend.exception.FurnitureApiException;
 import com.furniture.backend.model.role.Role;
 import com.furniture.backend.model.role.RoleName;
 import com.furniture.backend.model.user.User;
-import com.furniture.backend.payload.ApiResponse;
+import com.furniture.backend.payload.response.ApiResponse;
 import com.furniture.backend.payload.JwtAuthenticationResponse;
 import com.furniture.backend.payload.LoginRequest;
 import com.furniture.backend.payload.SignUpRequest;

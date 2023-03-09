@@ -9,6 +9,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
+
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
@@ -17,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "categories")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Category extends UserDateAudit {
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	@Id

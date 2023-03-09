@@ -1,6 +1,5 @@
 package com.furniture.backend.config;
 
-import com.furniture.backend.security.JwtAuthenticationEntryPoint;
 import com.furniture.backend.security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +20,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 		jsr250Enabled = true)
 @RequiredArgsConstructor
 public class SecurityConfig {
-	private final JwtAuthenticationEntryPoint unauthorizedHandler;
 	private final JwtAuthenticationFilter jwtAuthFilter;
 	private final AuthenticationProvider authenticationProvider;
 

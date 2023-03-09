@@ -2,7 +2,7 @@ package com.furniture.backend.service;
 
 import com.furniture.backend.exception.UnauthorizedException;
 import com.furniture.backend.model.Category;
-import com.furniture.backend.payload.ApiResponse;
+import com.furniture.backend.payload.response.ApiResponse;
 import com.furniture.backend.payload.PagedResponse;
 import com.furniture.backend.security.UserPrincipal;
 import org.springframework.http.ResponseEntity;

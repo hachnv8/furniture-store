@@ -1,6 +1,6 @@
 package com.furniture.backend.exception;
 
-import com.furniture.backend.payload.ApiResponse;
+import com.furniture.backend.payload.response.ApiResponse;
 import com.furniture.backend.payload.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

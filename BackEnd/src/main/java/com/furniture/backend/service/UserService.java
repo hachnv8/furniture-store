@@ -2,6 +2,7 @@ package com.furniture.backend.service;
 
 import com.furniture.backend.model.user.User;
 import com.furniture.backend.payload.*;
+import com.furniture.backend.payload.response.ApiResponse;
 import com.furniture.backend.security.UserPrincipal;
 
 public interface UserService {

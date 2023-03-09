@@ -4,7 +4,7 @@ import com.furniture.backend.exception.ResourceNotFoundException;
 import com.furniture.backend.exception.UnauthorizedException;
 import com.furniture.backend.model.Category;
 import com.furniture.backend.model.role.RoleName;
-import com.furniture.backend.payload.ApiResponse;
+import com.furniture.backend.payload.response.ApiResponse;
 import com.furniture.backend.payload.PagedResponse;
 import com.furniture.backend.repository.CategoryRepository;
 import com.furniture.backend.security.UserPrincipal;

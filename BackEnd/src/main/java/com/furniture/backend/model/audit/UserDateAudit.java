@@ -8,6 +8,8 @@ import lombok.EqualsAndHashCode;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
 
+import java.io.Serial;
+
 @EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
 @Data
@@ -16,6 +18,7 @@ import org.springframework.data.annotation.LastModifiedBy;
 		allowGetters = true
 )
 public abstract class UserDateAudit extends DateAudit {
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	@CreatedBy

@@ -2,6 +2,7 @@ package com.furniture.backend.controller;
 
 import com.furniture.backend.model.user.User;
 import com.furniture.backend.payload.*;
+import com.furniture.backend.payload.response.ApiResponse;
 import com.furniture.backend.security.CurrentUser;
 import com.furniture.backend.security.UserPrincipal;
 import com.furniture.backend.service.UserService;
@@ -67,7 +68,7 @@ public class UserController {
 	@DeleteMapping("/{username}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable(value = "username") String username,
-			@CurrentUser UserPrincipal currentUser) {
+												  @CurrentUser UserPrincipal currentUser) {
 		ApiResponse apiResponse = userService.deleteUser(username, currentUser);
 
 		return new ResponseEntity< >(apiResponse, HttpStatus.OK);
