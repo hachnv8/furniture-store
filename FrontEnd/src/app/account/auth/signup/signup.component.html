@@ -1,0 +1,126 @@
+<div class="account-pages my-5 pt-sm-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class="card overflow-hidden">
+          <div class="bg-soft bg-primary">
+            <div class="row">
+              <div class="col-7">
+                <div class="text-primary p-4">
+                  <h5 class="text-primary">Free Register</h5>
+                  <p>Get your free Furniture account now.</p>
+                </div>
+              </div>
+              <div class="col-5 align-self-end">
+                <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="card-body pt-0">
+            <div>
+              <a routerLink="/">
+                <div class="avatar-md profile-user-wid mb-4">
+                  <span class="avatar-title rounded-circle bg-light">
+                    <img src="assets/images/logo.svg" alt="" class="rounded-circle" height="34">
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div class="p-2">
+
+              <form class="needs-validation" name="signupForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()"
+                novalidate>
+
+                <ngb-alert type="success" *ngIf="successmsg" [dismissible]="false">Registeration successfull.
+                </ngb-alert>
+
+                <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="firstName" class="form-label">Họ</label>
+
+                      <input type="text" formControlName="firstName" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" id="firstName" placeholder="Họ" />
+
+                      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">Vui lòng nhập họ</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="lastName" class="form-label">Tên</label>
+                      <input type="text" formControlName="lastName" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" id="lastName" placeholder="Tên" />
+
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Vui lòng nhập tên</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+
+                  <input type="email" formControlName="email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="email" placeholder="Email" />
+
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Vui lòng nhập Email</div>
+                    <div *ngIf="f.email.errors.email">Vui lòng nhập đúng định dạng Email</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+
+                  <input type="password" formControlName="password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="password" placeholder="Password" />
+
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Vui lòng nhập Mật khẩu</div>
+                  </div>
+                </div>
+
+                <div class="mt-4 d-grid">
+                  <button class="btn btn-primary" type="submit">Đăng ký</button>
+                </div>
+                <div class="mt-4 text-center">
+                  <h5 class="font-size-14 mb-3">Đăng nhập với</h5>
+
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary">
+                        <i class="mdi mdi-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="javascript::void()" class="social-list-item bg-info text-white border-info">
+                        <i class="mdi mdi-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="javascript::void()" class="social-list-item bg-danger text-white border-danger">
+                        <i class="mdi mdi-google"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end card -->
+
+        <div class="mt-5 text-center">
+          <p>Đã có tài khoản? <a routerLink="/account/login" class="fw-medium text-primary"> Đăng nhập</a>
+          </p>
+          <p>© {{year}} Furniture. Crafted with <i class="mdi mdi-heart text-danger"></i> by Hách</p>
+        </div>
+      </div> <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>
