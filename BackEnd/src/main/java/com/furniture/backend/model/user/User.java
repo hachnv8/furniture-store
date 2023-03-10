@@ -67,10 +67,9 @@ public class User extends DateAudit {
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
 	private List<Role> roles;
 
-	public User(String firstName, String lastName, String username, String email, String password) {
+	public User(String firstName, String lastName, String email, String password) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.username = username;
 		this.email = email;
 		this.password = password;
 	}

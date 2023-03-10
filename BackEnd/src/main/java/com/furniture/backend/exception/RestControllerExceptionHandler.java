@@ -21,6 +21,9 @@ import java.util.Objects;
 @ControllerAdvice
 public class RestControllerExceptionHandler {
 
+	@ExceptionHandler(FurnitureApiException.class)
+	@ResponseBody
+	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
 	public ResponseEntity<ApiResponse> resolveException(FurnitureApiException exception) {
 		String message = exception.getMessage();
 		HttpStatus status = exception.getStatus();
@@ -110,6 +113,17 @@ public class RestControllerExceptionHandler {
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity<ExceptionResponse> resolveException(HttpMessageNotReadableException ex) {
 		String message = "Please provide Request Body in valid JSON format";
+		List<String> messages = new ArrayList<>(1);
+		messages.add(message);
+		return new ResponseEntity<>(new ExceptionResponse(messages, HttpStatus.BAD_REQUEST.getReasonPhrase(),
+				HttpStatus.BAD_REQUEST.value()), HttpStatus.BAD_REQUEST);
+	}
+
+	@ExceptionHandler({BadCredentialsException.class})
+	@ResponseBody
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	public ResponseEntity<ExceptionResponse> resolveException(BadCredentialsException ex) {
+		String message = "Email or Password is incorrect";
 		List<String> messages = new ArrayList<>(1);
 		messages.add(message);
 		return new ResponseEntity<>(new ExceptionResponse(messages, HttpStatus.BAD_REQUEST.getReasonPhrase(),
